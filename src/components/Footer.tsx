@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { FaInstagram, FaWhatsapp, FaFacebook } from "react-icons/fa";
 
 const WHATSAPP_URL = "https://wa.me/573053394024";
@@ -30,19 +31,14 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <div className="mb-4">
-              <span
-                style={{ fontFamily: "'Playfair Display', serif" }}
-                className="text-white text-xl font-semibold italic"
-              >
-                Dr. Fay De la Cruz
-              </span>
-              <br />
-              <span
-                style={{ fontFamily: "'Inter', sans-serif" }}
-                className="text-[#c9a84c] text-[10px] font-light tracking-[0.25em] uppercase"
-              >
-                Odontología
-              </span>
+              <Image
+                src="/logosinfondo.png"
+                alt="Dr. Fay De la Cruz Acuña"
+                width={180}
+                height={80}
+                className="brightness-0 invert opacity-90"
+                style={{ objectFit: "contain" }}
+              />
             </div>
             <p
               style={{ fontFamily: "'Inter', sans-serif" }}
