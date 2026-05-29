@@ -2,10 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  icons: {
-    icon: "/logosinfondo.png",
-    apple: "/logosinfondo.png",
-  },
   title: "Dr. Fay De la Cruz Acuña | Odontólogo en Barranquilla",
   description:
     "Odontología integral y estética en Barranquilla, Colombia. Aclaramiento dental, diseño de sonrisa, blanqueamiento, prótesis y más. Agenda tu cita con el Dr. Fay De la Cruz Acuña.",
