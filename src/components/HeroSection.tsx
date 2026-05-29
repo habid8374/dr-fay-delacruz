@@ -10,7 +10,7 @@ const HERO_TITLES = [
     main: "HALU: Software Escolar y Plataforma Académica Integral",
     highlight: "Gestión de Colegios con Tecnología Avanzada",
     subtitle:
-      "El software escolar líder en Colombia que automatiza admisiones, gestión académica, convivencia escolar y reportes. Más de 500 instituciones educativas ya confían en HALU.",
+      "El software escolar líder en Colombia que automatiza admisiones, gestión académica, convivencia escolar y reportes. Instituciones educativas de Colombia ya confían en HALU.",
   },
   {
     main: "Software Escolar Todo-en-Uno",
