@@ -13,7 +13,7 @@ export default function Hero() {
       id="inicio"
       className="relative min-h-screen overflow-hidden"
       style={{
-        background: "linear-gradient(135deg, #0a0a0a 0%, #1a1a3e 60%, #0a0a0a 100%)",
+        background: "#0a0a0a",
       }}
     >
       {/* Foto del doctor — posición absoluta, mitad derecha, altura completa */}
