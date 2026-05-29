@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { FaWhatsapp } from "react-icons/fa";
 import { ChevronDown } from "lucide-react";
+import Image from "next/image";
 
 const WHATSAPP_URL = "https://wa.me/573000000000";
 
@@ -96,7 +97,7 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Photo placeholder */}
+        {/* Doctor photo */}
         <motion.div
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
@@ -105,25 +106,23 @@ export default function Hero() {
         >
           <div className="relative">
             <div
-              className="w-72 h-72 md:w-96 md:h-96 rounded-full flex items-center justify-center"
+              className="w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden"
               style={{
-                background: "linear-gradient(135deg, #1a1a3e 0%, #2a2a5e 100%)",
                 border: "2px solid rgba(201,168,76,0.3)",
-                boxShadow: "0 0 60px rgba(201,168,76,0.15), inset 0 0 60px rgba(26,26,62,0.5)",
+                boxShadow: "0 0 60px rgba(201,168,76,0.15)",
               }}
             >
-              <span
-                style={{ fontFamily: "'Playfair Display', serif" }}
-                className="text-[#c9a84c] text-6xl md:text-7xl font-bold italic opacity-80"
-              >
-                FDC
-              </span>
+              <Image
+                src="/doctor-hero.jpg"
+                alt="Dr. Fay De la Cruz Acuña"
+                width={384}
+                height={384}
+                className="w-full h-full object-cover object-top"
+                priority
+              />
             </div>
             {/* Gold ring decoration */}
-            <div
-              className="absolute -inset-4 rounded-full border border-[#c9a84c]/20"
-              style={{ animationDuration: "8s" }}
-            />
+            <div className="absolute -inset-4 rounded-full border border-[#c9a84c]/20" />
             <div className="absolute -inset-8 rounded-full border border-[#c9a84c]/10" />
           </div>
         </motion.div>

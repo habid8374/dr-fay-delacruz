@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import Image from "next/image";
 
 const badges = ["Odontología Integral", "Estética Dental", "Barranquilla"];
 
@@ -77,7 +78,7 @@ export default function SobreMi() {
           </div>
         </motion.div>
 
-        {/* Photo placeholder */}
+        {/* Doctor photo */}
         <motion.div
           initial={{ opacity: 0, x: 40 }}
           animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -85,37 +86,17 @@ export default function SobreMi() {
           className="flex justify-center"
         >
           <div
-            className="w-72 h-96 rounded-3xl flex items-center justify-center relative overflow-hidden"
+            className="w-72 h-96 rounded-3xl overflow-hidden relative"
             style={{
-              background: "linear-gradient(160deg, #1a1a3e 0%, #0d0d25 100%)",
               border: "1px solid rgba(201,168,76,0.2)",
               boxShadow: "0 20px 60px rgba(0,0,0,0.5)",
             }}
           >
-            {/* Placeholder content */}
-            <div className="text-center">
-              <div
-                className="w-28 h-28 rounded-full flex items-center justify-center mx-auto mb-4"
-                style={{ background: "rgba(201,168,76,0.1)", border: "1px solid rgba(201,168,76,0.3)" }}
-              >
-                <span
-                  style={{ fontFamily: "'Playfair Display', serif" }}
-                  className="text-[#c9a84c] text-3xl font-bold italic"
-                >
-                  FDC
-                </span>
-              </div>
-              <p
-                style={{ fontFamily: "'Inter', sans-serif" }}
-                className="text-white/30 text-xs tracking-widest uppercase"
-              >
-                Foto del doctor
-              </p>
-            </div>
-            {/* Decorative corner */}
-            <div
-              className="absolute top-4 right-4 w-16 h-16 rounded-full opacity-20"
-              style={{ background: "radial-gradient(circle, #c9a84c 0%, transparent 70%)" }}
+            <Image
+              src="/doctor-sobre-mi.jpg"
+              alt="Dr. Fay De la Cruz Acuña - Universidad Metropolitana"
+              fill
+              className="object-cover object-top"
             />
           </div>
         </motion.div>

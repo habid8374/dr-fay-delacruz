@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
+import Image from "next/image";
 
 const links = [
   { label: "Inicio", href: "#inicio" },
@@ -35,19 +36,15 @@ export default function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <a href="#inicio" className="flex flex-col leading-none">
-          <span
-            style={{ fontFamily: "'Playfair Display', serif" }}
-            className="text-white text-xl font-semibold italic tracking-wide"
-          >
-            Dr. Fay De la Cruz
-          </span>
-          <span
-            style={{ fontFamily: "'Inter', sans-serif" }}
-            className="text-[#c9a84c] text-[10px] font-light tracking-[0.25em] uppercase mt-0.5"
-          >
-            Odontología
-          </span>
+        <a href="#inicio" className="flex items-center">
+          <Image
+            src="/logosinfondo.png"
+            alt="Dr. Fay De la Cruz - Odontología"
+            width={160}
+            height={50}
+            className="brightness-0 invert"
+            priority
+          />
         </a>
 
         {/* Desktop nav */}
