@@ -32,7 +32,7 @@ export default function Footer() {
           <div className="md:col-span-1">
             <div className="mb-4">
               <Image
-                src="/firma-footer.png"
+                src="/firma-footer.jpg"
                 alt="Dr. Fay De la Cruz Acuña"
                 width={180}
                 height={80}
