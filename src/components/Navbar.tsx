@@ -45,7 +45,7 @@ export default function Navbar() {
             alt="Dr. Fay De la Cruz - Odontología"
             width={140}
             height={80}
-            style={{ width: "auto", height: "80px" }}
+            style={{ width: "auto", height: "100px" }}
             className="invert"
             priority
           />
