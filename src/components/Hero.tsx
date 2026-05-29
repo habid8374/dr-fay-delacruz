@@ -102,28 +102,48 @@ export default function Hero() {
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          className="flex justify-center items-center"
+          className="flex justify-center items-end"
         >
-          <div className="relative">
+          <div className="relative w-80 md:w-[420px] h-[500px] md:h-[600px]">
+            <Image
+              src="/doctor-hero.jpg"
+              alt="Dr. Fay De la Cruz Acuña"
+              fill
+              className="object-cover object-top"
+              priority
+            />
+            {/* Difuminado inferior */}
             <div
-              className="w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden"
+              className="absolute inset-0"
               style={{
-                border: "2px solid rgba(201,168,76,0.3)",
-                boxShadow: "0 0 60px rgba(201,168,76,0.15)",
+                background:
+                  "linear-gradient(to top, #0a0a0a 0%, rgba(10,10,10,0.6) 30%, transparent 70%)",
               }}
-            >
-              <Image
-                src="/doctor-hero.jpg"
-                alt="Dr. Fay De la Cruz Acuña"
-                width={384}
-                height={384}
-                className="w-full h-full object-cover object-top"
-                priority
-              />
-            </div>
-            {/* Gold ring decoration */}
-            <div className="absolute -inset-4 rounded-full border border-[#c9a84c]/20" />
-            <div className="absolute -inset-8 rounded-full border border-[#c9a84c]/10" />
+            />
+            {/* Difuminado lateral izquierdo */}
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(to right, #0a0a0a 0%, transparent 40%)",
+              }}
+            />
+            {/* Difuminado lateral derecho */}
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(to left, #0a0a0a 0%, transparent 40%)",
+              }}
+            />
+            {/* Difuminado superior */}
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(to bottom, #0a0a0a 0%, transparent 20%)",
+              }}
+            />
           </div>
         </motion.div>
       </div>

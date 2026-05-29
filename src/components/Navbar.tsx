@@ -28,21 +28,24 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "backdrop-blur-md bg-black/70 border-b border-white/10 shadow-lg"
-          : "bg-transparent"
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
+      style={{
+        background: scrolled
+          ? "rgba(10,10,10,0.92)"
+          : "#0a0a0a",
+        backdropFilter: scrolled ? "blur(12px)" : "none",
+        borderBottom: scrolled ? "1px solid rgba(255,255,255,0.06)" : "none",
+      }}
     >
-      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo */}
+      <div className="max-w-6xl mx-auto px-4 flex items-center justify-between">
+        {/* Logo — sin padding extra, fusionado con el fondo negro */}
         <a href="#inicio" className="flex items-center">
           <Image
             src="/logosinfondo.png"
             alt="Dr. Fay De la Cruz - Odontología"
-            width={160}
-            height={50}
-            className="invert"
+            width={140}
+            height={80}
+            style={{ width: "auto", height: "80px" }}
             priority
           />
         </a>
@@ -89,7 +92,8 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-black/90 backdrop-blur-md border-t border-white/10"
+            className="md:hidden border-t border-white/10"
+            style={{ background: "#0a0a0a" }}
           >
             <nav className="flex flex-col px-6 py-6 gap-5">
               {links.map((l) => (
