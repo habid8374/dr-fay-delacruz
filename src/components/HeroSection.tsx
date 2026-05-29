@@ -22,7 +22,7 @@ const HERO_TITLES = [
     main: "Transforma tu Institución",
     highlight: "Con el Mejor Software Escolar",
     subtitle:
-      "Reduce 70% el trabajo manual, mejora la comunicación con familias y optimiza la gestión académica con tecnología de vanguardia diseñada para colegios en Colombia.",
+      "Reduce el trabajo manual, mejora la comunicación con familias y optimiza la gestión académica con tecnología de vanguardia diseñada para colegios en Colombia.",
   },
 ] as const;
 
@@ -89,13 +89,15 @@ const HeroSection = () => {
               </p>
             </div>
 
-            {/* Quick stats row */}
-            <div className="flex items-stretch justify-center gap-4 border-y border-white/10 py-4 sm:gap-6">
+            {/* Quick stats */}
+            <div className="flex flex-col items-stretch gap-3 border-y border-white/10 py-4 sm:flex-row sm:justify-center sm:gap-6">
               {QUICK_STATS.map((s, i) => (
                 <div
                   key={s.label}
-                  className={`flex flex-1 flex-col items-center gap-1 text-center sm:flex-none ${
-                    i !== 0 ? "border-l border-white/10 pl-4 sm:pl-6" : ""
+                  className={`flex flex-col items-center gap-1 px-2 text-center ${
+                    i !== 0
+                      ? "border-t border-white/10 pt-3 sm:border-l sm:border-t-0 sm:pl-6 sm:pt-0"
+                      : ""
                   }`}
                 >
                   <div className="flex items-center gap-1.5">
