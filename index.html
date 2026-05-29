@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/halu-uploads/b65d18e6-c27c-41e1-8c79-9c68d460b305.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>HALU - Software Escolar y Plataforma Académica Integral para Gestión de Colegios</title>
+    <meta name="description" content="HALU es el software escolar líder en Colombia para la gestión integral de colegios. Plataforma académica que automatiza admisiones, gestión académica, convivencia escolar y reportes." />
+    <meta name="author" content="haluplataform.com" />
+
+    <!-- Open Graph para Facebook y redes -->
+    <meta property="og:title" content="HALU - Software Escolar y Plataforma Académica Integral para Gestión de Colegios" />
+    <meta property="og:description" content="Transforma tu institución educativa con HALU, la plataforma académica integral que automatiza procesos y mejora la gestión escolar." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://haluplataform.com/assets/img/og-image.png" />
+    <meta property="og:url" content="https://haluplataform.com" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@haluplataform" />
+    <meta name="twitter:title" content="HALU - Software Escolar y Plataforma Académica Integral para Gestión de Colegios" />
+    <meta name="twitter:description" content="Transforma tu institución educativa con HALU, la plataforma académica integral que automatiza procesos y mejora la gestión escolar." />
+    <meta name="twitter:image" content="https://haluplataform.com/assets/img/og-image.png" />
+
+    <!-- TikTok Profile -->
+    <link rel="me" href="https://www.tiktok.com/@halu.plataforma" />
+    <meta name="tiktok:card" content="summary_large_image" />
+    <meta name="tiktok:title" content="HALU - Software Escolar y Plataforma Académica Integral" />
+    <meta name="tiktok:description" content="Descubre HALU, la plataforma que revoluciona la gestión de colegios en Colombia." />
+    <meta name="tiktok:image" content="https://haluplataform.com/assets/img/og-image.png" />
+  </head>
+
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W35FZ6HZ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('SW registered: ', registration);
+            })
+            .catch((registrationError) => {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  HALU Design System — "Zafiro Educativo"
+  Fondo azul profundo con auras de gradiente, azul eléctrico como primario,
+  teal como acento y dorado para CTAs destacados.
+  All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* ── Base ──────────────────────────────────────────────── */
+    --background: 226 48% 5%;           /* #060f26 azul noche profundo */
+    --foreground: 214 28% 93%;          /* #e3eaf6 blanco azulado suave */
+
+    --card: 226 42% 8%;                 /* #0b1630 superficie card */
+    --card-foreground: 214 28% 93%;
+
+    --popover: 226 38% 10%;
+    --popover-foreground: 214 28% 93%;
+
+    /* ── Primary — azul eléctrico vivo ──────────────────────── */
+    --primary: 213 90% 55%;             /* #2476f5 */
+    --primary-foreground: 0 0% 100%;
+
+    /* ── Secondary — sección tonal ──────────────────────────── */
+    --secondary: 226 36% 11%;           /* #101e3a */
+    --secondary-foreground: 214 24% 82%;
+
+    --muted: 226 36% 11%;
+    --muted-foreground: 217 20% 57%;    /* #7a8fad */
+
+    /* ── Accent — teal vibrante ──────────────────────────────── */
+    --accent: 168 80% 38%;              /* #13b07a */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 56%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 226 28% 16%;              /* #172540 */
+    --input: 226 36% 11%;
+    --ring: 213 90% 55%;
+
+    /* ── Colores educativos ──────────────────────────────────── */
+    --edu-blue: 213 90% 55%;
+    --edu-blue-light: 213 90% 68%;
+    --edu-blue-dark: 213 90% 42%;
+    --edu-green: 158 72% 40%;
+    --edu-green-light: 158 72% 52%;
+    --edu-purple: 258 68% 64%;
+    --edu-orange: 38 96% 54%;           /* dorado cálido */
+
+    /* ── Gradients ───────────────────────────────────────────── */
+    --gradient-hero: linear-gradient(135deg, hsl(213 90% 48%) 0%, hsl(258 68% 56%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(226 42% 8%) 0%, hsl(226 36% 11%) 100%);
+    --gradient-accent: linear-gradient(90deg, hsl(168 80% 38%) 0%, hsl(213 90% 55%) 100%);
+
+    /* ── Shadows ─────────────────────────────────────────────── */
+    --shadow-soft:   0 4px 24px -4px hsl(213 90% 15% / 0.55);
+    --shadow-medium: 0 8px 36px -8px hsl(213 90% 15% / 0.65);
+    --shadow-strong: 0 16px 56px -8px hsl(213 90% 15% / 0.75);
+
+    /* ── Transitions ──────────────────────────────────────────── */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.625rem;
+
+    --sidebar-background: 226 42% 7%;
+    --sidebar-foreground: 214 28% 85%;
+    --sidebar-primary: 213 90% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 226 36% 11%;
+    --sidebar-accent-foreground: 214 28% 85%;
+    --sidebar-border: 226 28% 16%;
+    --sidebar-ring: 213 90% 55%;
+  }
+
+  /* ── Light mode ─────────────────────────────────────────────── */
+  .light {
+    --background: 220 22% 97%;          /* #f3f6fc muy suave azul-blanco */
+    --foreground: 226 48% 8%;           /* #0c1530 texto oscuro */
+
+    --card: 0 0% 100%;
+    --card-foreground: 226 48% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 226 48% 8%;
+
+    --primary: 213 90% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 18% 93%;
+    --secondary-foreground: 226 36% 20%;
+
+    --muted: 220 18% 93%;
+    --muted-foreground: 220 14% 46%;
+
+    --accent: 168 80% 36%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 16% 87%;
+    --input: 220 16% 91%;
+    --ring: 213 90% 50%;
+
+    --edu-blue: 213 90% 50%;
+    --edu-blue-light: 213 90% 64%;
+    --edu-blue-dark: 213 90% 38%;
+    --edu-green: 158 72% 36%;
+    --edu-green-light: 158 72% 48%;
+    --edu-purple: 258 68% 56%;
+    --edu-orange: 38 96% 50%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(213 90% 48%) 0%, hsl(258 68% 52%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(220 22% 97%) 0%, hsl(220 18% 94%) 100%);
+    --gradient-accent: linear-gradient(90deg, hsl(168 80% 36%) 0%, hsl(213 90% 50%) 100%);
+
+    --shadow-soft:   0 4px 20px -4px hsl(213 90% 55% / 0.12);
+    --shadow-medium: 0 8px 32px -8px hsl(213 90% 55% / 0.18);
+    --shadow-strong: 0 16px 48px -8px hsl(213 90% 55% / 0.24);
+
+    --sidebar-background: 220 22% 97%;
+    --sidebar-foreground: 226 36% 20%;
+    --sidebar-primary: 213 90% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 18% 93%;
+    --sidebar-accent-foreground: 226 36% 20%;
+    --sidebar-border: 220 16% 87%;
+    --sidebar-ring: 213 90% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6.5rem;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Aura mesh en el html — fixed sin problemas de iOS */
+  html::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+      radial-gradient(ellipse 100% 55% at 50% -8%, hsl(213 90% 42% / 0.16) 0%, transparent 60%),
+      radial-gradient(ellipse 65% 45% at 88% 108%, hsl(258 68% 56% / 0.11) 0%, transparent 55%),
+      radial-gradient(ellipse 55% 38% at 8% 92%, hsl(168 80% 38% / 0.08) 0%, transparent 50%);
+  }
+
+  /* Sin aura en modo claro */
+  .light::before {
+    display: none;
+  }
+}
+
+/* Mejora de tipografía para headings */
+@layer utilities {
+  .text-gradient-blue {
+    @apply bg-gradient-to-r from-primary via-edu-blue-light to-accent bg-clip-text text-transparent;
+  }
+  .text-gradient-hero {
+    @apply bg-gradient-to-r from-white via-white to-white/70 bg-clip-text text-transparent;
+  }
+  .glass-card {
+    @apply border border-border/50 bg-card/80 backdrop-blur-sm;
+  }
+}
