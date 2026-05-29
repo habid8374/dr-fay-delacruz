@@ -9,7 +9,7 @@ const WHATSAPP_URL = "https://wa.me/573053394024";
 
 const info = [
   { icon: MapPin, text: "Barranquilla, Colombia" },
-  { icon: Phone, text: "+57 300 000 0000" },
+  { icon: Phone, text: "+57 305 339 4024" },
   { icon: Clock, text: "Lun – Sáb: 8:00am – 6:00pm" },
 ];
 
