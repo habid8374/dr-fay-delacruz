@@ -133,6 +133,22 @@ export default function Hero() {
         </div>
       </div>
 
+      {/* Logo firma — watermark elegante sobre la foto */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 1.2 }}
+        className="absolute bottom-16 right-8 z-10 pointer-events-none hidden md:block"
+      >
+        <Image
+          src="/logosinfondo.png"
+          alt="Dr. Fay De la Cruz"
+          width={220}
+          height={120}
+          style={{ width: "auto", height: "120px", opacity: 0.18, filter: "invert(1)" }}
+        />
+      </motion.div>
+
       {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
