@@ -46,6 +46,7 @@ export default function Navbar() {
             width={140}
             height={80}
             style={{ width: "auto", height: "80px" }}
+            className="invert"
             priority
           />
         </a>

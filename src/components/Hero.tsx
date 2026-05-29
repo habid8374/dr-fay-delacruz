@@ -32,7 +32,7 @@ export default function Hero() {
         />
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 pt-24 pb-16 w-full grid md:grid-cols-2 gap-12 items-center">
+      <div className="max-w-6xl mx-auto px-6 pt-24 pb-16 w-full grid md:grid-cols-2 gap-0 items-center">
         {/* Text column */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
@@ -99,52 +99,46 @@ export default function Hero() {
 
         {/* Doctor photo */}
         <motion.div
-          initial={{ opacity: 0, x: 40 }}
+          initial={{ opacity: 0, x: 60 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          className="flex justify-center items-end"
+          transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
+          className="relative h-[85vh] min-h-[600px]"
         >
-          <div className="relative w-80 md:w-[420px] h-[500px] md:h-[600px]">
-            <Image
-              src="/doctor-hero.jpg"
-              alt="Dr. Fay De la Cruz Acuña"
-              fill
-              className="object-cover object-top"
-              priority
-            />
-            {/* Difuminado inferior */}
-            <div
-              className="absolute inset-0"
-              style={{
-                background:
-                  "linear-gradient(to top, #0a0a0a 0%, rgba(10,10,10,0.6) 30%, transparent 70%)",
-              }}
-            />
-            {/* Difuminado lateral izquierdo */}
-            <div
-              className="absolute inset-0"
-              style={{
-                background:
-                  "linear-gradient(to right, #0a0a0a 0%, transparent 40%)",
-              }}
-            />
-            {/* Difuminado lateral derecho */}
-            <div
-              className="absolute inset-0"
-              style={{
-                background:
-                  "linear-gradient(to left, #0a0a0a 0%, transparent 40%)",
-              }}
-            />
-            {/* Difuminado superior */}
-            <div
-              className="absolute inset-0"
-              style={{
-                background:
-                  "linear-gradient(to bottom, #0a0a0a 0%, transparent 20%)",
-              }}
-            />
-          </div>
+          <Image
+            src="/doctor-hero.jpg"
+            alt="Dr. Fay De la Cruz Acuña"
+            fill
+            className="object-cover object-center"
+            priority
+          />
+          {/* Difuminado izquierdo fuerte — se funde con el texto */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background: "linear-gradient(to right, #0a0a0a 0%, rgba(10,10,10,0.7) 35%, rgba(10,10,10,0.1) 65%, transparent 100%)",
+            }}
+          />
+          {/* Difuminado inferior */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background: "linear-gradient(to top, #0a0a0a 0%, rgba(10,10,10,0.4) 25%, transparent 55%)",
+            }}
+          />
+          {/* Difuminado superior */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background: "linear-gradient(to bottom, #0a0a0a 0%, transparent 25%)",
+            }}
+          />
+          {/* Difuminado derecho */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background: "linear-gradient(to left, #0a0a0a 0%, transparent 30%)",
+            }}
+          />
         </motion.div>
       </div>
 
