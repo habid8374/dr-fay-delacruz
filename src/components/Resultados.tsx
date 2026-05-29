@@ -2,30 +2,41 @@
 
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import Image from "next/image";
 
 const casos = [
   {
-    label: "Diseño de Sonrisa",
-    desc: "Transformación completa con carillas de porcelana y blanqueamiento profesional.",
+    label: "Prótesis Completa",
+    desc: "Rehabilitación oral completa. Funcionalidad y estética recuperadas en su totalidad.",
+    antes: "/antes-1.jpg",
+    despues: "/despues-1.jpg",
+  },
+  {
+    label: "Aclaramiento Dental",
+    desc: "Recuperación del tono natural con tratamiento personalizado y sin sensibilidad.",
+    antes: "/antes-2.jpg",
+    despues: "/despues-2.jpg",
   },
   {
     label: "Blanqueamiento",
-    desc: "8 tonos más claro en una sola sesión con tecnología LED de última generación.",
-  },
-  {
-    label: "Aclaramiento",
-    desc: "Recuperación del tono natural con tratamiento personalizado y sin sensibilidad.",
+    desc: "Resultado inmediato y visible. Dientes notablemente más blancos en una sola sesión.",
+    antes: "/antes-3.jpg",
+    despues: "/despues-3.jpg",
   },
 ];
 
 function BeforeAfterCard({
   label,
   desc,
+  antes,
+  despues,
   index,
   inView,
 }: {
   label: string;
   desc: string;
+  antes: string;
+  despues: string;
   index: number;
   inView: boolean;
 }) {
@@ -54,76 +65,63 @@ function BeforeAfterCard({
       {/* Slider area */}
       <div
         ref={cardRef}
-        className="relative h-56 cursor-ew-resize select-none overflow-hidden"
+        className="relative h-64 cursor-ew-resize select-none overflow-hidden"
         onMouseDown={() => { dragging.current = true; }}
         onMouseMove={(e) => { if (dragging.current) handleMove(e.clientX); }}
         onMouseUp={() => { dragging.current = false; }}
         onMouseLeave={() => { dragging.current = false; }}
+        onTouchStart={() => { dragging.current = true; }}
         onTouchMove={(e) => handleMove(e.touches[0].clientX)}
+        onTouchEnd={() => { dragging.current = false; }}
       >
-        {/* Before (gray) */}
-        <div
-          className="absolute inset-0 flex items-center justify-center"
-          style={{ background: "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)" }}
-        >
-          <span
-            style={{ fontFamily: "'Inter', sans-serif" }}
-            className="text-white/40 text-xs tracking-widest uppercase"
-          >
-            Antes
-          </span>
+        {/* Antes — foto real */}
+        <div className="absolute inset-0">
+          <Image
+            src={antes}
+            alt="Antes"
+            fill
+            className="object-cover object-center"
+            sizes="(max-width: 768px) 100vw, 33vw"
+          />
         </div>
 
-        {/* After (white/bright) */}
+        {/* Después — foto real con clip */}
         <div
-          className="absolute inset-0 flex items-center justify-center overflow-hidden"
+          className="absolute inset-0 overflow-hidden"
           style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)` }}
         >
-          <div
-            className="absolute inset-0"
-            style={{ background: "linear-gradient(135deg, #f0f0f0 0%, #ffffff 100%)" }}
+          <Image
+            src={despues}
+            alt="Después"
+            fill
+            className="object-cover object-center"
+            sizes="(max-width: 768px) 100vw, 33vw"
           />
-          <span
-            style={{ fontFamily: "'Inter', sans-serif", position: "relative" }}
-            className="text-black/40 text-xs tracking-widest uppercase"
-          >
-            Después
-          </span>
         </div>
 
-        {/* Divider line */}
+        {/* Línea divisora */}
         <div
           className="absolute top-0 bottom-0 w-0.5 bg-[#c9a84c] pointer-events-none"
           style={{ left: `${sliderPos}%` }}
         >
-          <div
-            className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-[#c9a84c] flex items-center justify-center shadow-lg"
-          >
-            <span className="text-black text-xs font-bold">⟷</span>
+          <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-[#c9a84c] flex items-center justify-center shadow-xl">
+            <span className="text-black text-sm font-bold">⟷</span>
           </div>
         </div>
 
-        {/* Labels */}
+        {/* Etiquetas */}
         <div className="absolute bottom-3 left-3 pointer-events-none">
           <span
-            style={{
-              fontFamily: "'Inter', sans-serif",
-              background: "rgba(0,0,0,0.5)",
-              backdropFilter: "blur(4px)",
-            }}
-            className="text-white/80 text-[10px] tracking-widest uppercase px-2 py-1 rounded"
+            style={{ fontFamily: "'Inter', sans-serif", background: "rgba(0,0,0,0.6)", backdropFilter: "blur(4px)" }}
+            className="text-white/90 text-[10px] tracking-widest uppercase px-2 py-1 rounded"
           >
             Antes
           </span>
         </div>
         <div className="absolute bottom-3 right-3 pointer-events-none">
           <span
-            style={{
-              fontFamily: "'Inter', sans-serif",
-              background: "rgba(0,0,0,0.5)",
-              backdropFilter: "blur(4px)",
-            }}
-            className="text-white/80 text-[10px] tracking-widest uppercase px-2 py-1 rounded"
+            style={{ fontFamily: "'Inter', sans-serif", background: "rgba(0,0,0,0.6)", backdropFilter: "blur(4px)" }}
+            className="text-white/90 text-[10px] tracking-widest uppercase px-2 py-1 rounded"
           >
             Después
           </span>
