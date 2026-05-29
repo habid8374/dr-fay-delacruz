@@ -34,8 +34,8 @@ export default function Footer() {
               <Image
                 src="/firma-footer.jpg"
                 alt="Dr. Fay De la Cruz Acuña"
-                width={180}
-                height={80}
+                width={360}
+                height={160}
                 className="opacity-90"
                 style={{ objectFit: "contain", filter: "invert(1)" }}
               />
