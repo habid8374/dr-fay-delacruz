@@ -1,6 +1,6 @@
 import { FaInstagram, FaWhatsapp, FaFacebook } from "react-icons/fa";
 
-const WHATSAPP_URL = "https://wa.me/573000000000";
+const WHATSAPP_URL = "https://wa.me/573053394024";
 
 const quickLinks = [
   { label: "Inicio", href: "#inicio" },

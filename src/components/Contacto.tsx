@@ -5,7 +5,7 @@ import { motion, useInView } from "framer-motion";
 import { FaWhatsapp } from "react-icons/fa";
 import { MapPin, Phone, Clock } from "lucide-react";
 
-const WHATSAPP_URL = "https://wa.me/573000000000";
+const WHATSAPP_URL = "https://wa.me/573053394024";
 
 const info = [
   { icon: MapPin, text: "Barranquilla, Colombia" },
