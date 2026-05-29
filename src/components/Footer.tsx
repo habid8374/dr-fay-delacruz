@@ -126,7 +126,7 @@ export default function Footer() {
             style={{ fontFamily: "'Inter', sans-serif" }}
             className="text-white/25 text-xs font-light text-center sm:text-left"
           >
-            © 2025 Dr. Fay De la Cruz Acuña — Odontología Integral y Estética
+            © 2026 Dr. Fay De la Cruz Acuña — Odontología Integral y Estética
           </p>
           <p
             style={{ fontFamily: "'Inter', sans-serif" }}
