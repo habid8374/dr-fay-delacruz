@@ -15,7 +15,7 @@ const WhatsAppButton = () => {
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   return (
-    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50">
+    <div className="fixed bottom-6 right-4 sm:right-6 z-50">
       {showTooltip && (
         <div className="absolute bottom-16 sm:bottom-20 right-0 bg-white rounded-2xl shadow-2xl p-3 sm:p-4 w-64 sm:w-72 mb-2 border max-w-[calc(100vw-2rem)]">
           <div className="flex justify-between items-start mb-3">

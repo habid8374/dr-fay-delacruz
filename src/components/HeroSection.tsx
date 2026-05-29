@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play, Users, TrendingDown, Zap } from "lucide-react";
+import { ArrowRight, Play, School, LayoutGrid, HeartHandshake } from "lucide-react";
 import { DemoRequestDialog } from "./DemoRequestDialog";
 import { VideoPlayerDialog } from "./VideoPlayerDialog";
 import InscriptionButton from "./InscriptionButton";
@@ -27,9 +27,9 @@ const HERO_TITLES = [
 ] as const;
 
 const QUICK_STATS = [
-  { icon: Users, value: "500+", label: "Colegios" },
-  { icon: TrendingDown, value: "70%", label: "Menos papeleo" },
-  { icon: Zap, value: "72h", label: "Implementación" },
+  { icon: School, value: "Para colegios", label: "Diseñado para instituciones educativas" },
+  { icon: LayoutGrid, value: "Centralizado", label: "Todos los procesos del colegio en un lugar" },
+  { icon: HeartHandshake, value: "Acompañamiento", label: "Te guiamos en la implementación" },
 ];
 
 const HeroSection = () => {
@@ -56,6 +56,8 @@ const HeroSection = () => {
         muted
         playsInline
       />
+      {/* Overlay oscuro semitransparente para mejorar el contraste del texto blanco */}
+      <div className="absolute inset-0 bg-black/50" aria-hidden />
       <div
         className="absolute inset-0 bg-gradient-to-br from-slate-950/92 via-slate-950/72 to-primary/30"
         aria-hidden
@@ -88,12 +90,19 @@ const HeroSection = () => {
             </div>
 
             {/* Quick stats row */}
-            <div className="flex items-center justify-center gap-6 border-y border-white/10 py-4">
+            <div className="flex items-stretch justify-center gap-4 border-y border-white/10 py-4 sm:gap-6">
               {QUICK_STATS.map((s, i) => (
-                <div key={s.label} className={`flex items-center gap-2 ${i !== 0 ? "border-l border-white/10 pl-6" : ""}`}>
-                  <s.icon className="h-4 w-4 text-sky-300 shrink-0" />
-                  <span className="text-sm font-bold text-white">{s.value}</span>
-                  <span className="text-xs text-white/60 hidden sm:inline">{s.label}</span>
+                <div
+                  key={s.label}
+                  className={`flex flex-1 flex-col items-center gap-1 text-center sm:flex-none ${
+                    i !== 0 ? "border-l border-white/10 pl-4 sm:pl-6" : ""
+                  }`}
+                >
+                  <div className="flex items-center gap-1.5">
+                    <s.icon className="h-4 w-4 shrink-0 text-sky-300" />
+                    <span className="text-sm font-bold text-white sm:text-base">{s.value}</span>
+                  </div>
+                  <span className="text-[11px] leading-tight text-white/70 sm:text-xs">{s.label}</span>
                 </div>
               ))}
             </div>

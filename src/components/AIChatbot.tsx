@@ -117,7 +117,7 @@ const AIChatbot = () => {
     return (
       <Button
         onClick={() => setAiChatOpen(true)}
-        className="fixed bottom-32 left-4 sm:left-6 z-40 bg-purple-600 hover:bg-purple-700 text-white rounded-full w-14 h-14 shadow-lg"
+        className="fixed bottom-6 left-4 sm:left-6 z-40 bg-purple-600 hover:bg-purple-700 text-white rounded-full w-14 h-14 shadow-lg"
         aria-label="Abrir chat con IA"
       >
         <Bot className="w-6 h-6" />
