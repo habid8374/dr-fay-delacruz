@@ -36,8 +36,8 @@ export default function Footer() {
                 alt="Dr. Fay De la Cruz Acuña"
                 width={180}
                 height={80}
-                className="brightness-0 invert opacity-90"
-                style={{ objectFit: "contain" }}
+                className="opacity-90"
+                style={{ objectFit: "contain", filter: "invert(1)" }}
               />
             </div>
             <p
