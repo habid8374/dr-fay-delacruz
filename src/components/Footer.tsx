@@ -10,6 +10,12 @@ const quickLinks = [
   { label: "Contacto", href: "#contacto" },
 ];
 
+const legalLinks = [
+  { label: "Política de privacidad", href: "/privacidad" },
+  { label: "Términos de servicio", href: "/terminos" },
+  { label: "Política de cookies", href: "/cookies" },
+];
+
 export default function Footer() {
   return (
     <footer
@@ -20,9 +26,9 @@ export default function Footer() {
       }}
     >
       <div className="max-w-6xl mx-auto px-6">
-        <div className="grid md:grid-cols-3 gap-10 mb-12">
+        <div className="grid md:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
-          <div>
+          <div className="md:col-span-1">
             <div className="mb-4">
               <span
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -57,6 +63,29 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3">
               {quickLinks.map((l) => (
+                <li key={l.href}>
+                  <a
+                    href={l.href}
+                    style={{ fontFamily: "'Inter', sans-serif" }}
+                    className="text-white/40 hover:text-[#c9a84c] text-sm font-light transition-colors"
+                  >
+                    {l.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Legal links */}
+          <div>
+            <h4
+              style={{ fontFamily: "'Inter', sans-serif" }}
+              className="text-white text-sm font-medium tracking-wider uppercase mb-5"
+            >
+              Legal
+            </h4>
+            <ul className="space-y-3">
+              {legalLinks.map((l) => (
                 <li key={l.href}>
                   <a
                     href={l.href}
